@@ -2,6 +2,7 @@
 const rock = 'Rock'.toLowerCase();
 const paper = 'Paper'.toLowerCase();
 const scissor = 'Scissor'.toLowerCase();
+
 // Score containers 
 var playerScore = 0;
 var computerScore = 0;
@@ -50,14 +51,25 @@ function startRound(playerSelection, computerSelection) {
 // Function to start a game with 5 rounds
 function game(startRound) {
     for (let i = 0; i < 5; i++) {
-        console.log('Player Score is ' + playerScore);
-        console.log('Computer Score is ' + computerScore);
+        var computerSelection = getComputerChoice(3);
+        startRound(playerSelection, computerSelection);
+
+        console.log('PLAYER: ' + playerScore + ' COMPUTER: ' + computerScore);
+        if (i === 4) {
+            if (playerScore == computerScore) {
+                console.log('Game Over, The Game is a DRAW');
+            } else if (playerScore > computerScore) {
+                console.log('Game Over! PLAYER WINS!! SCORE \n' + 'PLAYER: ' + playerScore + '\n' + 'COMPUTER: ' + computerScore);
+            } else if (playerScore < computerScore) {
+                console.log('Game Over! COMPUTER WINS!! \n' + 'SCORE \n' + 'PLAYER: ' + playerScore + '\n' + 'COMPUTER: ' + computerScore);
+            }
+        }
+ 
     }
 }
 
-const playerSelection = rock;
-const computerSelection = getComputerChoice(3);
-console.log(game(startRound));
+playerSelection = rock;
+game(startRound);
 
 
 
