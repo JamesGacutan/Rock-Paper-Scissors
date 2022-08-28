@@ -1,7 +1,7 @@
 // Make all variables to lowercase
-const rock = 'Rock'.toLowerCase();
-const paper = 'Paper'.toLowerCase();
-const scissor = 'Scissor'.toLowerCase();
+const rock = 'rock';
+const paper = 'paper';
+const scissor = 'scissor';
 
 // Score containers 
 var playerScore = 0;
@@ -52,6 +52,8 @@ function startRound(playerSelection, computerSelection) {
 function game(startRound) {
     for (let i = 0; i < 5; i++) {
         var computerSelection = getComputerChoice(3);
+        var playerSelection =  getPlayerChoice();
+
         startRound(playerSelection, computerSelection);
 
         console.log('PLAYER: ' + playerScore + ' COMPUTER: ' + computerScore);
@@ -67,8 +69,22 @@ function game(startRound) {
  
     }
 }
+// Function for Player Choice
+function getPlayerChoice(playerSelection) {
+    var playerSelection = prompt('Rock, Paper or Scissor?');
 
-playerSelection = rock;
+    if (playerSelection.toLowerCase() === rock) {
+        return playerSelection = rock;
+    } else if (playerSelection.toLowerCase() === paper) {
+        return playerSelection = paper;
+    } else if (playerSelection.toLowerCase() === scissor) {
+        return playerSelection = scissor;
+    } else {
+        alert('Rock, Paper or Scissor only!!');
+        getPlayerChoice();
+    }
+}
+
 game(startRound);
 
 
