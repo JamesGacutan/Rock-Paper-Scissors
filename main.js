@@ -1,6 +1,11 @@
-const rock = 'Rock';
-const paper = 'Paper';
-const scissor = 'Scissor';
+// Make all variables to lowercase
+const rock = 'Rock'.toLowerCase();
+const paper = 'Paper'.toLowerCase();
+const scissor = 'Scissor'.toLowerCase();
+// Score containers 
+var playerScore = 0;
+var computerScore = 0;
+
 
 // Function for computer choice
 function getComputerChoice(max) {
@@ -15,29 +20,46 @@ function getComputerChoice(max) {
     }
 }
 
-// Function for staring round
+// Function for staring round and choosing the winner
 function startRound(playerSelection, computerSelection) {
-    
+
+
     if (playerSelection === computerSelection) {
         console.log('DRAW');
     } else if ((playerSelection === rock) && (computerSelection === scissor)) {
         console.log('Player Wins!! Rock beats Scissor.');
+        playerScore++;
     } else if ((playerSelection === scissor) && (computerSelection === rock)) {
         console.log('Computer Wins!! Rock beats Scissor');
+        computerScore++;
     } else if ((playerSelection === rock) && (computerSelection === paper)) {
         console.log('Computer Wins!! Paper beats Rock.');
+        computerScore++;
     } else if ((playerSelection === paper) && (computerSelection === rock)) {
         console.log('Player Wins!! Paper beats Rock.');
+        playerScore++;
     } else if ((playerSelection === scissor) && (computerSelection === paper)) {
         console.log('Player Wins!!  Scissor beats Paper.');
+        playerScore++;
     } else if ((playerSelection === paper) && (computerSelection === scissor)) {
         console.log('Computer Wins!!  Scissor beats Paper.');
+        computerScore++;
     }
 }
 
-const playerSelection = 'Rock';
+// Function to start a game with 5 rounds
+function game(startRound) {
+    for (let i = 0; i < 5; i++) {
+        console.log('Player Score is ' + playerScore);
+        console.log('Computer Score is ' + computerScore);
+    }
+}
+
+const playerSelection = rock;
 const computerSelection = getComputerChoice(3);
-console.log(startRound(playerSelection, computerSelection));
+console.log(game(startRound));
+
+
 
 
 
