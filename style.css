@@ -1,120 +1,206 @@
+/* box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75); */
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body {
+main {
     height: 100vh;
 }
 
-header {
-    height: 10%;
-    padding: .5rem 10rem;
-    text-align: center;
-    line-height: 2.5;
-}
-
-main {
-    height: 80%;
-    padding: 7rem 15rem;
-}
-
 .title {
-    border: 3px solid gray;
-    box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
-
+    text-align: center;
+    line-height: 1.5;
+    margin: 1rem 1rem;
+    border-bottom: 5px solid black;
+    padding-bottom: 1rem;
 }
 
 .title h1 {
     text-transform: uppercase;
+    font-size: 2rem;
 }
 
 .title p {
     font-size: 1.2rem;
 }
 
+.choices {
+    text-align: center;
+    line-height: 2;
+    margin-top: 2rem;
+}
+
 .inst {
-    margin-bottom: 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .choice {
-    padding: 1rem;
-    background-color: white;
+    height: 50px;
+    width: 150px;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    background-color: transparent;
+    transition: .2s;
+    color: black;
     border: 3px solid black;
-    transition: .3s;
 }
 
-.choice:hover {
-    box-shadow: 3px 10px 0px 0px rgba(0,0,0,0.75);
-    background-color: black;
-    color: white;
+
+.rock:hover {
+    border: 3px solid blue;
+    color: #fff;
+    background-color: blue;
+    box-shadow: 5px 5px 0px 0px blue;
+}
+
+.paper:hover {
+    border: 3px solid red;
+    color: #fff;
+    background-color: red;
+    box-shadow: 5px 5px 0px 0px red;
+}
+
+.scissors:hover {
+    border: 3px solid green;
+    color: #fff;
+    background-color: green;
+    box-shadow: 5px 5px 0px 0px green;
+}
+
+.wrapper {
+    height: 100%;
 }
 
 .label {
+    margin: 7rem 1rem;
     display: flex;
-    height: 15%;
-    gap: 5rem;
-    margin: 10rem 0 1rem;
-}
-
-.choices {
-    margin-top: 1rem;
-    margin-left: 38rem;
-}
-
-.inst {
-    margin-bottom: 2rem;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.5rem;
 }
 
 .player-label,
 .computer-label {
-    text-transform: uppercase;
-    font-weight: bold;
-    border: 3px solid gray;
+    border: 3px solid black;
     box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
-    width: 50%;
+    height: 70px;
+    width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .scores {
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    margin: 3rem;
     display: flex;
-    justify-content: space-between;
-    line-height: 1.5;
+    justify-content: space-around;
+    font-size: 1.3rem;
+    text-transform: uppercase;
 }
 
-.scores p {
-    text-align: center;
+.player,
+.computer {
+    height: 70px;
+    width: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.player {
+    border: 3px solid green;
+    box-shadow: 10px 10px 0px 0px green;
+}
+
+.computer {
+    border: 3px solid blue;
+    box-shadow: 10px 10px 0px 0px blue;
 }
 
 .game {
-    margin-left: 23rem;
+    margin: 7rem 1rem;
+    text-align: center;
+    font-size: 2.5rem;
     display: flex;
-    border: 3px solid gray;
-    height: 15%;
-    width: 50%;
     justify-content: center;
     align-items: center;
-    box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
+}
+
+.game h2 {
+    height: 150px;
+    width: 100vh;
+    border: 3px solid black;
+    box-shadow: 15px 15px 0px 0px rgba(0,0,0,0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 footer {
-    height: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 20vh;
+    border: 3px solid blue;
 }
 
-footer h3 {
-    text-transform: uppercase;
-    opacity: 70%;
+@media screen and (max-width: 1299px) {
+    .player-label,
+    .computer-label {
+        width: 30%;
+    } 
 }
 
+@media screen and (max-width: 1100px) {
+    .player-label,
+    .computer-label {
+        width: 40%;
+    } 
+}
 
+@media screen and (max-width: 800px) {
+    .player-label,
+    .computer-label {
+        width: 45%;
+    }
+    
+    .game h2 {
+        height: 150px;
+        width: 50vh;
+    }
 
+    .game {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .player-label,
+    .computer-label {
+        width: 90%;
+    } 
+
+    .label {
+        flex-direction: column;
+        gap: 20px;
+        font-size: 1.5rem;
+    }
+
+    .game h2 {
+        height: 120px;
+        width: 50vh;
+    }
+
+    .choices {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .choice {
+        width: 80%;
+    }
+}
