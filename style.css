@@ -156,6 +156,12 @@ main {
     box-shadow: 15px 15px 0px 0px rgba(0,0,0,0.75);
 }
 
+.draw,
+.comp-rock, .comp-paper, .comp-scissors,
+.player-rock, .player-paper, .player-scissors {
+    display: none;
+}
+
 .game h2 {
     height: 150px;
     width: 100vh;

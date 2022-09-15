@@ -8,8 +8,16 @@ var scissors = 'Scissors';
 let pScore = 0;
 let cmpScore = 0;
 
+const playerScore = document.querySelector('.p-score');
+const computerScore = document.querySelector('.c-score');
+
+
+const playerLabel = document.querySelector('.player-para');
+const computerLabel = document.querySelector('.computer-para');
+
 // Choices
 let computerChoice;
+
 // function for computer choice 
 function getComputerChoice(n) {
     let choice = Math.floor(Math.random() * n + 1);
@@ -22,35 +30,6 @@ function getComputerChoice(n) {
         return scissors; 
     }
 }
-
-// function for getting player choice
-// function getPlayerChoice(e) {
-
-//     let playerChoice;
-
-//     if (e.target === btnRock) {
-//         btnRock.textContent = rock;
-//         return playerChoice = btnRock.textContent;
-//     } else if (e.target === btnPaper) {
-//         btnPaper.textContent = paper;
-//         return playerChoice = btnPaper.textContent;
-//     } else if (e.target === btnScissors) {
-//         btnScissors.textContent = scissors;
-//         return  playerChoice = btnScissors.textContent;
-//     }
-// }
-
-// Show computer choice in html
-// function showLabel (){
-//     computerLabel = document.querySelector('.computer-label')
-
-//     compPara = document.createElement('p');
-//     computerLabel.appendChild(compPara);
-
-//     compText = document.createTextNode(`Computer have chosen ${computerChoice}`);
-//     compPara.appendChild(compText);
-// }
-
 
 // function for player choice 
 let btnRock = document.querySelector('.rock');
@@ -86,30 +65,37 @@ let btnScissors = document.querySelector('.scissors');
 
 function startRound(playerChoice, computerChoice){
 
+
     if (playerChoice === computerChoice){
-        console.log('DRAW');
+        playerLabel.textContent = 'DRAW';
+        computerLabel.textContent = 'DRAW';
     } else if (playerChoice === rock & computerChoice === scissors) {
+        computerLabel.textContent = '';
+        playerLabel.textContent = 'Rock beats Scissors, Player Wins.'
         pScore += 1;
-        console.log('Player Wins! Rock beats Scissors');
     } else if (playerChoice === paper & computerChoice === rock) {
+        computerLabel.textContent = '';
+        playerLabel.textContent = 'Paper beats Rock, Player Wins.'
         pScore += 1;
-        console.log('Player Wins! Paper beats Rock');
     } else if (playerChoice === scissors & computerChoice === paper) {
+        computerLabel.textContent = '';
+        playerLabel.textContent = 'Scissors beats paper, Player Wins.'
         pScore += 1;
-        console.log('Player Wins! Scissors beats Paper');
     } else if (computerChoice === rock & playerChoice === scissors) {
+        playerLabel.textContent = '';
+        computerLabel.textContent = 'Rock beats Scissors, Computer Wins.';
         cmpScore += 1;
-        console.log('Computer Wins! Rock beats Scissors');
     } else if (computerChoice === paper & playerChoice === rock) {
+        playerLabel.textContent = '';
+        computerLabel.textContent = 'Paper beats Rock, Computer Wins.';
         cmpScore += 1;
-        console.log('Computer Wins! Paper beats Rock');
     } else if (computerChoice === scissors & playerChoice === paper) {
+        playerLabel.textContent = '';
+        computerLabel.textContent = 'Scissors beats paper, Computer Wins.';
         cmpScore += 1;
-        console.log('Computer Wins! Scissors beats Paper');
     } 
-        
-        console.log(pScore);
-        console.log(cmpScore);
+        playerScore.textContent = pScore;
+        computerScore.textContent = cmpScore;
     }
 
 
