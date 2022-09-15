@@ -24,21 +24,21 @@ function getComputerChoice(n) {
 }
 
 // function for getting player choice
-function getPlayerChoice(e) {
+// function getPlayerChoice(e) {
 
-    let playerChoice;
+//     let playerChoice;
 
-    if (e.target === btnRock) {
-        btnRock.textContent = rock;
-        return playerChoice = btnRock.textContent;
-    } else if (e.target === btnPaper) {
-        btnPaper.textContent = paper;
-        return playerChoice = btnPaper.textContent;
-    } else if (e.target === btnScissors) {
-        btnScissors.textContent = scissors;
-        return  playerChoice = btnScissors.textContent;
-    }
-}
+//     if (e.target === btnRock) {
+//         btnRock.textContent = rock;
+//         return playerChoice = btnRock.textContent;
+//     } else if (e.target === btnPaper) {
+//         btnPaper.textContent = paper;
+//         return playerChoice = btnPaper.textContent;
+//     } else if (e.target === btnScissors) {
+//         btnScissors.textContent = scissors;
+//         return  playerChoice = btnScissors.textContent;
+//     }
+// }
 
 // Show computer choice in html
 // function showLabel (){
@@ -53,42 +53,31 @@ function getPlayerChoice(e) {
 
 
 // function for player choice 
-
-// let choices = document.querySelector('.choices');
-
-
-
 let btnRock = document.querySelector('.rock');
 let btnPaper = document.querySelector('.paper');
 let btnScissors = document.querySelector('.scissors');
 
 
-btnRock.addEventListener('click' , () => {
-    playerChoice = btnRock.textContent;
-    computerChoice = getComputerChoice(3);
+    btnRock.addEventListener('click' , () => {
+        playerChoice = btnRock.textContent;
+        computerChoice = getComputerChoice(3);
+        game();
+    });
+    
+    btnPaper.addEventListener('click' , () => {
+        playerChoice = btnPaper.textContent;
+        computerChoice = getComputerChoice(3);
+    
+        game();
+    });
+    
+    btnScissors.addEventListener('click' , () => {
+        playerChoice = btnScissors.textContent;
+        computerChoice = getComputerChoice(3);
+    
+        game();
+    });
 
-    console.log(`Computer : ${computerChoice}`);
-    console.log(`Player: ${playerChoice}`);
-    startRound(playerChoice, computerChoice);
-});
-
-btnPaper.addEventListener('click' , () => {
-    playerChoice = btnPaper.textContent;
-    computerChoice = getComputerChoice(3);
-
-    console.log(`Computer : ${computerChoice}`);
-    console.log(`Player: ${playerChoice}`);
-    startRound(playerChoice, computerChoice);
-});
-
-btnScissors.addEventListener('click' , () => {
-    playerChoice = btnScissors.textContent;
-    computerChoice = getComputerChoice(3);
-
-    console.log(`Computer : ${computerChoice}`);
-    console.log(`Player: ${playerChoice}`);
-    startRound(playerChoice, computerChoice);
-});
 
 
     
@@ -123,4 +112,47 @@ function startRound(playerChoice, computerChoice){
         console.log(cmpScore);
     }
 
+
+function game(){
+
+    if (pScore === 5 && cmpScore < 5) {
+        announceWin('The game is over! Player Wins!!!')
+        disableBtn();
+        newGame();
+    } else if (pScore < 5 && cmpScore === 5) {
+        announceWin('The game is over! Computer Wins!!!')
+        disableBtn();
+        newGame();
+    }  else {
+        startRound(playerChoice, computerChoice);
+    }
+}
+
+
+// function for disabling button after winning
+
+let disableBtn = () => {
+    btnPaper.disabled = true;
+    btnRock.disabled = true;
+    btnScissors.disabled = true;
+};
+
+// function for displaying the result
+
+let announceWin = (winner) => {
+    const container = document.querySelector('.game');
+
+    const newH2 = document.createElement('h2');
+    newH2.textContent = winner;
+
+    container.append(newH2);
+};
+
+// function for starting a new game 
+
+let newGame = () => {
+    const newBtn = document.querySelector('.button-container');
+
+    newBtn.style.opacity = 1;
+};
 
