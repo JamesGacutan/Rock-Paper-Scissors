@@ -6,50 +6,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock Paper Scissor</title>
   <link rel="stylesheet" href="style.css">
+<script src="index.js" defer></script>
+
 </head>
 <body>
 
   <main>
     <header>
-      <div class="title">
-        <h1>Rock Paper Scissors</h1>
-        <p>A digital Rock Paper Scissors game.</p>
+      <div class="title-container">
+        <p class="title"><span class="sword">Sword</span> <span class="axe">Axe</span> and <span class="lance">Lance</span></p>
+        <p class="title-description">Rock Paper Scissor game based on Fire Emblem's Weapon Triangle</p>
       </div>
   </header>
-  <div class="wrapper">
-    <p class="inst">Choose your pick.</p>
-    <div class="choices">
-      <button type="button" class="choice rock">Rock</button>
-      <button type="button" class="choice paper">Paper</button>
-      <button type="button" class="choice scissors">Scissors</button>
-  </div>
-  <div class="label">
-    <div class="player-label">
-      <p class="player-para"></p>
-    </div>
-    <div class="computer-label">
-      <p class="computer-para"></p>
-    </div>
-  </div>
-  <div class="scores"> 
-    <div class="player">
-      <h3>Player</h3>
-      <p class="p-score"></p>
-    </div>
-    <div class="computer">
-      <h3>Computer</h3>  
-      <p class="c-score"></p>
-    </div>
-  </div>
-  <div class="game"></div>
-  <div class="button-container">
-    <button class="new-game" onclick="location.reload()">Play Again?</button>
-  </div>
-  
-  </div>
-  
-  </main>
 
-<script src="index.js"></script>
+
+  <div class="wrapper">
+    <p class="inst">Choose your Weapon</p>
+      <div class="weapons">
+        <button type="button" class="weapon swords"></button>
+        <button type="button" class="weapon axes"></button>
+        <button type="button" class="weapon lances"></button>
+      </div>
+    <div class="chosen-weapons-container">
+      <div class="player-weapon">
+        <p>Your Weapon</p>
+        <img src="images/axe.png" class="images" alt="axe">
+      </div>
+      <div class="enemy-weapon">
+        <p>Enemy's Weapon</p>
+        <img src="images/sword.png" class="images" alt="sword">
+      </div>
+    </div>
+    <div class="battle-description">
+      <p class="battle-end-description bold">Player won sword beats axe.</p>
+      <div class="scores">
+        <p><span class="bold"> Battles left:</span> 10</p>
+        <p><span class="bold">Enemy Wins:</span> 3</p>
+        <p><span class="bold">Your Wins:</span> 5</p>
+      </div>
+    </div>
+
+  <div class="game">
+    <p class="end-game-description bold">Player won the battle!!</p>
+    <div class="button">
+      <button class="new-game bold" onclick="location.reload()">Fight Again?</button>
+    </div>
+  </div>
+  </div>
+  </main>
+  <footer>
+    <p class="credits">Created by: <a href="https://github.com/JamesGacutan">
+      BronzeWebDev</a></p>  
+  </footer>
 </body>
 </html>
