@@ -6,8 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock Paper Scissor</title>
   <link rel="stylesheet" href="style.css">
-<script src="index.js" defer></script>
-
+  <script src="index.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Nanum+Myeongjo&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -15,13 +17,13 @@
     <header>
       <div class="title-container">
         <p class="title"><span class="sword">Sword</span> <span class="axe">Axe</span> and <span class="lance">Lance</span></p>
-        <p class="title-description">Rock Paper Scissor game based on Fire Emblem's Weapon Triangle</p>
+        <p class="title-description">Sword beats Axe | Axe beats Lance | Lance beats Sword</p>
       </div>
   </header>
 
 
   <div class="wrapper">
-    <p class="inst">Choose your Weapon</p>
+    <p class="inst bold">Choose your Weapon</p>
       <div class="weapons">
         <button type="button" class="weapon swords"></button>
         <button type="button" class="weapon axes"></button>
@@ -40,23 +42,29 @@
     <div class="battle-description">
       <p class="battle-end-description bold">Player won sword beats axe.</p>
       <div class="scores">
-        <p><span class="bold"> Battles left:</span> 10</p>
-        <p><span class="bold">Enemy Wins:</span> 3</p>
-        <p><span class="bold">Your Wins:</span> 5</p>
+        <p class="battles-left"><span class="bold"> Battles left:</span> 10</p>
+        <p class="enemy-wins"><span class="bold">Enemy Wins:</span> 3</p>
+        <p class="player-wins"><span class="bold">Your Wins:</span> 5</p>
       </div>
     </div>
 
-  <div class="game">
+  <div class="game player-win">
     <p class="end-game-description bold">Player won the battle!!</p>
     <div class="button">
       <button class="new-game bold" onclick="location.reload()">Fight Again?</button>
     </div>
   </div>
+  <div class="game enemy-win">
+    <p class="end-game-description bold">You lost the battle!!</p>
+    <div class="button">
+      <button class="new-game bold" onclick="location.reload()">Get Revenge?</button>
+    </div>
+  </div>
   </div>
   </main>
   <footer>
-    <p class="credits">Created by: <a href="https://github.com/JamesGacutan">
-      BronzeWebDev</a></p>  
+    <p class="credits"><a href="https://github.com/JamesGacutan/odin-rock-paper-scissors">
+      BronzeWebDev</a> 2022</p>  
   </footer>
 </body>
 </html>
