@@ -1,19 +1,17 @@
 // global variable for choices 
-
-var rock = 'Rock';
-var paper = 'Paper';
-var scissors = 'Scissors';
+var sword = 'Sword';
+var axe = 'Axe';
+var lance = 'Lance';
 
 // Score container 
-let pScore = 0;
-let cmpScore = 0;
+let pWins = 0;
+let cWins = 0;
 
-const playerScore = document.querySelector('.p-score');
-const computerScore = document.querySelector('.c-score');
+// place scores in game
+const playerScore = document.querySelector('.player');
+const computerScore = document.querySelector('.enemy');
 
-
-const playerLabel = document.querySelector('.player-para');
-const computerLabel = document.querySelector('.computer-para');
+const battleEndDesc = document.querySelector('.battle-end-description');
 
 // Choices
 let computerChoice;
@@ -21,124 +19,123 @@ let computerChoice;
 // function for computer choice 
 function getComputerChoice(n) {
     let choice = Math.floor(Math.random() * n + 1);
-    // Set 3 numbers to Rock, Paper and Scissors
+    // Set 3 numbers to Sword, Axe and Lance
     if (choice === 1) {
-        return rock;   
+        return sword;   
     } else if (choice === 2) {
-        return paper;
+        return axe;
     } else {
-        return scissors; 
+        return lance; 
     }
 }
 
+// place computer weapon in game
+function placeWeapon(weapon, player, container) {
+    if (weapon == sword) {
+        player.src  = 'images/sword.png'
+        player.className = 'images'
+        container.append(player); 
+    } else if (weapon == axe) {
+        player.src  = 'images/axe.png'
+        player.className = 'images'
+        container.append(player); 
+    } else {
+        player.src  = 'images/spear.png'
+        player.className = 'images'
+        container.append(player); 
+    }
+}
+
+// variable for choice image
+let playerImage = document.createElement('img');
+let enemyImage = document.createElement('img');
+let pWeapon = document.querySelector(".player-weapon");
+let cWeapon = document.querySelector(".enemy-weapon");
+
 // function for player choice 
-let btnRock = document.querySelector('.rock');
-let btnPaper = document.querySelector('.paper');
-let btnScissors = document.querySelector('.scissors');
+let btnSword = document.querySelector('.swords');
+let btnAxe = document.querySelector('.axes');
+let btnLance = document.querySelector('.lances');
 
-
-    btnRock.addEventListener('click' , () => {
-        playerChoice = btnRock.textContent;
-        computerChoice = getComputerChoice(3);
-        game();
-    });
+btnSword.addEventListener('click' , () => {
+    playerChoice = sword;
+    computerChoice = getComputerChoice(3);
+    // place choices in game
+    placeWeapon(playerChoice, playerImage, pWeapon);
+    placeWeapon(computerChoice, enemyImage, cWeapon);
+    game();
+});
     
-    btnPaper.addEventListener('click' , () => {
-        playerChoice = btnPaper.textContent;
-        computerChoice = getComputerChoice(3);
+btnAxe.addEventListener('click' , () => {
+    playerChoice = axe;
+    computerChoice = getComputerChoice(3);
+    // place choices in game
+    placeWeapon(playerChoice, playerImage, pWeapon);
+    placeWeapon(computerChoice, enemyImage, cWeapon);
+    game();
+});
     
-        game();
-    });
-    
-    btnScissors.addEventListener('click' , () => {
-        playerChoice = btnScissors.textContent;
-        computerChoice = getComputerChoice(3);
-    
-        game();
-    });
-
-
-
-    
+btnLance.addEventListener('click' , () => {
+    playerChoice = lance;
+    computerChoice = getComputerChoice(3);
+    // place choices in game
+    placeWeapon(playerChoice, playerImage, pWeapon);
+    placeWeapon(computerChoice, enemyImage, cWeapon);
+    game();
+});
 
 // function for starting the game
-
 function startRound(playerChoice, computerChoice){
-
+    const battleDraw = '2 same weapons clashing, Its a Draw!!';
+    const swordWin = 'Sword versus Axe, Sword is superior!';
+    const axeWin = 'Axe versus Lance, Axe is superior';
+    const lanceWin = 'Lance versus Sword, Lance is superior';
 
     if (playerChoice === computerChoice){
-        playerLabel.textContent = 'DRAW';
-        computerLabel.textContent = 'DRAW';
-    } else if (playerChoice === rock & computerChoice === scissors) {
-        computerLabel.textContent = '';
-        playerLabel.textContent = 'Rock beats Scissors, Player Wins.'
-        pScore += 1;
-    } else if (playerChoice === paper & computerChoice === rock) {
-        computerLabel.textContent = '';
-        playerLabel.textContent = 'Paper beats Rock, Player Wins.'
-        pScore += 1;
-    } else if (playerChoice === scissors & computerChoice === paper) {
-        computerLabel.textContent = '';
-        playerLabel.textContent = 'Scissors beats paper, Player Wins.'
-        pScore += 1;
-    } else if (computerChoice === rock & playerChoice === scissors) {
-        playerLabel.textContent = '';
-        computerLabel.textContent = 'Rock beats Scissors, Computer Wins.';
-        cmpScore += 1;
-    } else if (computerChoice === paper & playerChoice === rock) {
-        playerLabel.textContent = '';
-        computerLabel.textContent = 'Paper beats Rock, Computer Wins.';
-        cmpScore += 1;
-    } else if (computerChoice === scissors & playerChoice === paper) {
-        playerLabel.textContent = '';
-        computerLabel.textContent = 'Scissors beats paper, Computer Wins.';
-        cmpScore += 1;
+        battleEndDesc.textContent = battleDraw;
+    } else if (playerChoice === sword & computerChoice === axe) {
+        battleEndDesc.textContent  = `${swordWin}. You win this round.`
+        pWins += 1;
+    } else if (playerChoice === lance & computerChoice === sword) {
+        battleEndDesc.textContent  = `${lanceWin}. You win this round.`
+        pWins += 1;
+    } else if (playerChoice === axe & computerChoice === lance) {
+        battleEndDesc.textContent  = `${axeWin}. You win this round.`
+        pWins += 1;
+    } else if (computerChoice === sword & playerChoice === axe) {
+        battleEndDesc.textContent  = `${swordWin}. You lost this round.`
+        cWins += 1;
+    } else if (computerChoice === lance & playerChoice === sword) {
+        battleEndDesc.textContent  = `${lanceWin}. You lost this round.`
+        cWins += 1;
+    } else if (computerChoice === axe & playerChoice === lance) {
+        battleEndDesc.textContent  = `${axeWin}. You lost this round.`
+        cWins += 1;
     } 
-        playerScore.textContent = pScore;
-        computerScore.textContent = cmpScore;
+        playerScore.textContent = `Your Wins: ${pWins}`;
+        computerScore.textContent = `Enemy Wins: ${cWins}`;
     }
 
-
-function game(){
-
-    if (pScore === 5 && cmpScore < 5) {
-        announceWin('The game is over! Player Wins!!!')
+// check for winners 
+function game() {
+    if (pWins == 5) {
         disableBtn();
-        newGame();
-    } else if (pScore < 5 && cmpScore === 5) {
-        announceWin('The game is over! Computer Wins!!!')
+        const playerWinBattle = document.querySelector('.player-win');
+        playerWinBattle.style = 'display: flex';
+    } else if (cWins == 5) {
+        const enemyWinBattle = document.querySelector('.enemy-win');
+        enemyWinBattle.style = 'display: flex';
         disableBtn();
-        newGame();
-    }  else {
+    } else {
         startRound(playerChoice, computerChoice);
     }
 }
 
-
 // function for disabling button after winning
-
 let disableBtn = () => {
-    btnPaper.disabled = true;
-    btnRock.disabled = true;
-    btnScissors.disabled = true;
+    btnSword.disabled = true;
+    btnAxe.disabled = true;
+    btnLance.disabled = true;
 };
 
-// function for displaying the result
-
-let announceWin = (winner) => {
-    const container = document.querySelector('.game');
-
-    const newH2 = document.createElement('h2');
-    newH2.textContent = winner;
-
-    container.append(newH2);
-};
-
-// function for starting a new game 
-
-let newGame = () => {
-    const newBtn = document.querySelector('.button-container');
-
-    newBtn.style.opacity = 1;
-};
 
