@@ -8,3 +8,4 @@ A simple implementation of The Rock Paper Scissors game.
 A Fire Emblem Weapon Triangle based Rock Paper Scissors, I like FE since I was a kid so I decided to try and change RPS with FE's Weapon Triangle which is Swords, Axes and Lances.
 
 The game works just like RPS, 1 weapon beat the others. **Swords beats Axes, Axes beats Lances and Lances beats Swords**.
+Live version [here](https://jamesgacutan.github.io/Rock-Paper-Scissors/)
