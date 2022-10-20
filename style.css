@@ -9,18 +9,18 @@ body {
 }
 
 .title-container {
-    margin-top: 1rem;
     text-align: center;
-    height: 10vh;
+    height: 10%;
 }
 
 .title {
     font-family: 'Bree Serif', serif;
-    font-size: 2rem;
+    font-size: 2em;
+    margin: 1rem;
 }
 
 .title-description {
-    margin-top: .525rem;
+    margin: 1rem 0;
     text-transform: uppercase;
     font-size: .9rem;
     font-weight: bold;
@@ -45,7 +45,7 @@ body {
 }
 
 .inst {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     text-align: center;
     font-size: 1.3rem;
 }
@@ -55,7 +55,7 @@ body {
     margin: auto;
     display: flex;
     flex-grow: 0;
-    max-width: 50%;
+    width: 90%;
 }
 
 .weapon {
@@ -70,8 +70,7 @@ body {
     background-image: url(images/sword.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 70% 55%;
-    max-width: 100%;
+    background-size: 85% 55%;
     transition: .2s ease;
 }
 
@@ -80,7 +79,6 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 80% 55%;
-    max-width: 100%;
     transition: .2s ease;
 }
 
@@ -89,7 +87,6 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 80% 55%;
-    max-width: 100%;
     transition: .2s ease;
 }
 
@@ -114,8 +111,7 @@ body {
 
 .chosen-weapons-container {
     height: 15%;
-    width: 70%;
-    max-width: 40%;
+    max-width: 60%;
     margin: auto;
     margin-top: 2rem;
     display: flex;
@@ -145,7 +141,6 @@ body {
     margin-top: 2rem;
     height: 20%;
     width: 90%;
-    max-width: 60%;
 }
 
 .scores {
@@ -211,6 +206,17 @@ body {
 .credits a {
     text-decoration: none;
     color: brown;
+}
+
+@media (min-width: 800px) {
+    .weapons,
+    .battle-description {
+        width: 45%;
+    }
+
+    .chosen-weapons-container {
+        width: 40%;
+    }
 }
 
 
