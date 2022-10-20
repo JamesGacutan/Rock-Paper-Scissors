@@ -1,5 +1,3 @@
-/* box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75); */
-
 * {
     padding: 0;
     margin: 0;
@@ -22,7 +20,6 @@ body {
 }
 
 .title-description {
-    font-family: 'Nanum Myeongjo', serif;
     margin-top: .525rem;
     text-transform: uppercase;
     font-size: .9rem;
@@ -48,22 +45,25 @@ body {
 }
 
 .inst {
+    margin-bottom: 2rem;
     text-align: center;
     font-size: 1.3rem;
 }
 
 .weapons {
-    height: 30%;
-    width: 90%;
+    height: 25%;
     margin: auto;
     display: flex;
+    flex-grow: 0;
+    max-width: 50%;
 }
 
 .weapon {
     cursor: pointer;
-    width: 33.3%;
+    flex-basis: 33.3%;
     background-color: transparent;
     border: none;
+    height: 100%;
 }
 
 .swords {
@@ -71,6 +71,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 70% 55%;
+    max-width: 100%;
     transition: .2s ease;
 }
 
@@ -79,6 +80,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 80% 55%;
+    max-width: 100%;
     transition: .2s ease;
 }
 
@@ -87,6 +89,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 80% 55%;
+    max-width: 100%;
     transition: .2s ease;
 }
 
@@ -110,9 +113,11 @@ body {
 }
 
 .chosen-weapons-container {
-    margin-top: 2rem;
-    padding: .8rem 0;
     height: 15%;
+    width: 70%;
+    max-width: 40%;
+    margin: auto;
+    margin-top: 2rem;
     display: flex;
     justify-content: space-around;
 }
@@ -124,12 +129,11 @@ body {
 }
 
 .images{
-    display: block;
+    display: flex;
     margin-left: auto;
     margin-right: auto;
     margin-top: .5rem;
-    width: auto;
-    height: 80%;
+    height: 60%;
 }
 
 .battle-description {
@@ -139,25 +143,29 @@ body {
     align-items: center;
     margin: auto;
     margin-top: 2rem;
-    height: 15%;
+    height: 20%;
     width: 90%;
+    max-width: 60%;
 }
 
 .scores {
     display: flex;
-    gap: 1rem;
+    margin-top: auto;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    gap: 5rem;
 }
 
 .battle-end-description,
 .end-game-description {
     font-size: 1.3rem;
-    height: 21%;
-    width: 80%;
     text-align: center;
 }
 
 .battle-end-description {
     margin: 1rem 0 2rem 0;
+    height: 50%;
+    width: 90%;
 }
 
 .bold {
@@ -176,9 +184,10 @@ body {
 .enemy-win,
 .player-win  {
     display: none;
+    width: 50%;
+    margin: auto;
+    margin-top: 2rem;
 }
-
-
 
 .new-game {
     cursor: pointer;
@@ -203,127 +212,6 @@ body {
     text-decoration: none;
     color: brown;
 }
-
-@media (min-width: 800px) {
-
-    .chosen-weapons-container {
-        margin-bottom: 1.5rem;
-    }
-
-    .battle-description {
-        width: 90%;
-        margin: auto;
-    }
-
-    .swords,
-    .lances,
-    .axes {
-        background-size: 50% 50%;
-    }
-}
-
-@media (min-width: 900px)  {
-    .wrapper {
-        padding: 0 4rem;
-    }
-
-    .chosen-weapons-container {
-        margin-bottom: 1.5rem;
-    }
-
-    .battle-description {
-        width: 90%;
-        margin: auto;
-    }
-
-    .swords,
-    .lances,
-    .axes {
-        background-size: 55% 55%;
-    }
-}
-
-@media (min-width: 1200px)  {
-    .wrapper {
-        padding: 0 5rem;
-    }
-
-    .chosen-weapons-container {
-        width: 70%;
-        margin: auto;
-        margin-bottom: 2rem;
-    }
-
-    .weapons,
-    .battle-description {
-        margin: auto;
-        width: 70%;
-    }
-
-    .swords,
-    .lances,
-    .axes {
-        background-size: 50% 50%;
-    }
-}
-
-@media (min-width: 1500px)  {
-    .wrapper {
-        padding: 0 6rem;
-    }
-
-    .weapons {
-        margin: auto;
-        width: 70%;
-    }
-
-    .chosen-weapons-container {
-        width: 50%;
-        margin: auto;
-        margin-bottom: 3rem;
-    }
-
-    .battle-description {
-        width: 70%;
-        margin: auto;
-    }
-
-    .swords,
-    .lances,
-    .axes {
-        background-size: 45% 45%;
-    }
-}
-
-@media (min-width: 1920px)  {
-    .wrapper {
-        padding: 0 6rem;
-    }
-
-    .weapons {
-        margin: auto;
-        width: 60%;
-    }
-
-    .chosen-weapons-container {
-        width: 50%;
-        margin: auto;
-        margin-bottom: 1.5rem;
-    }
-
-    .battle-description {
-        width: 60%;
-        margin: auto;
-    }
-
-    .swords,
-    .lances,
-    .axes {
-        background-size: 45% 45%;
-    }
-}
-
-
 
 
 
