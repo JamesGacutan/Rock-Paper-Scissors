@@ -219,5 +219,16 @@ body {
     }
 }
 
+@media (max-width: 300px) {
+    .weapons,
+    .battle-description {
+        width: 100%;
+    }
+
+    .chosen-weapons-container {
+        width: 80%;
+    }
+}
+
 
 
