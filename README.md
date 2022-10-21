@@ -1,9 +1,9 @@
-#The Odin Project - Rock Paper Scissors
+# The Odin Project - Rock Paper Scissors
 
 My first project in The Odin Project curriculum. 
 A simple implementation of The Rock Paper Scissors game.
 
-#Description
+# Description
 
 A Fire Emblem Weapon Triangle based Rock Paper Scissors, I like FE since I was a kid so I decided to try and change RPS with FE's Weapon Triangle which is Swords, Axes and Lances.
 
