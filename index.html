@@ -13,56 +13,55 @@
   <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Nanum+Myeongjo&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <main>
     <header>
       <div class="title-container">
         <p class="title"><span class="sword">Sword</span> <span class="axe">Axe</span> and <span class="lance">Lance</span></p>
         <p class="title-description">Sword beats Axe | Axe beats Lance | Lance beats Sword</p>
       </div>
-  </header>
+    </header>
 
-
-  <div class="wrapper">
-    <p class="inst bold">Choose your Weapon</p>
+    <div class="wrapper">
+      <p class="inst bold">Choose your Weapon</p>
       <div class="weapons">
         <button type="button" class="weapon swords"></button>
         <button type="button" class="weapon axes"></button>
         <button type="button" class="weapon lances"></button>
       </div>
-    <div class="chosen-weapons-container">
-      <div class="player-weapon">
-        <p>Your Weapon</p>
+      <div class="chosen-weapons-container">
+        <div class="player-weapon">
+          <p>Your Weapon</p>
+        </div>
+        <div class="enemy-weapon">
+          <p>Enemy's Weapon</p>
+        </div>
       </div>
-      <div class="enemy-weapon">
-        <p>Enemy's Weapon</p>
+      <div class="battle-description">
+        <p class="battle-end-description bold">Good luck in your battle!</p>
+        <div class="scores">
+          <p class="player player-wins bold">Your Wins: </p>
+          <p class="enemy enemy-wins bold">Enemy Wins: </p>
+        </div>
+      </div>
+      <div class="game player-win">
+        <p class="end-game-description bold">Player won the battle!!</p>
+      <div class="button">
+        <button class="new-game bold" onclick="location.reload()">Fight Again?</button>
+      </div>
+      </div>
+      <div class="game enemy-win">
+        <p class="end-game-description bold">You lost the battle!!</p>
+        <div class="button">
+          <button class="new-game bold" onclick="location.reload()">Get Revenge?</button>
+        </div>
       </div>
     </div>
-    <div class="battle-description">
-      <p class="battle-end-description bold">Good luck in your battle!</p>
-      <div class="scores">
-        <p class="player player-wins bold">Your Wins: </p>
-        <p class="enemy enemy-wins bold">Enemy Wins: </p>
-      </div>
-    </div>
-
-  <div class="game player-win">
-    <p class="end-game-description bold">Player won the battle!!</p>
-    <div class="button">
-      <button class="new-game bold" onclick="location.reload()">Fight Again?</button>
-    </div>
-  </div>
-  <div class="game enemy-win">
-    <p class="end-game-description bold">You lost the battle!!</p>
-    <div class="button">
-      <button class="new-game bold" onclick="location.reload()">Get Revenge?</button>
-    </div>
-  </div>
-  </div>
   </main>
+
   <footer>
     <p class="credits"><a href="https://github.com/JamesGacutan/odin-rock-paper-scissors">
       BronzeWebDev</a> 2022</p>  
   </footer>
+  
 </body>
 </html>

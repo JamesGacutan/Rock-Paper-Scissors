@@ -79,9 +79,9 @@ btnLance.addEventListener('click' , () => {
     playerChoice = lance;
     computerChoice = getComputerChoice(3);
     // place choices in game
+    game();
     placeWeapon(playerChoice, playerImage, pWeapon);
     placeWeapon(computerChoice, enemyImage, cWeapon);
-    game();
 });
 
 // function for starting the game
@@ -119,9 +119,9 @@ function startRound(playerChoice, computerChoice){
 // check for winners 
 function game() {
     if (pWins == 5) {
-        disableBtn();
         const playerWinBattle = document.querySelector('.player-win');
         playerWinBattle.style = 'display: flex';
+        disableBtn();
     } else if (cWins == 5) {
         const enemyWinBattle = document.querySelector('.enemy-win');
         enemyWinBattle.style = 'display: flex';
