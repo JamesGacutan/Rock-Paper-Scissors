@@ -111,7 +111,7 @@ body {
 
 .chosen-weapons-container {
     height: 15%;
-    max-width: 60%;
+    width: 100%;
     margin: auto;
     margin-top: 2rem;
     display: flex;
@@ -219,15 +219,67 @@ body {
     }
 }
 
-@media (max-width: 300px) {
-    .weapons,
-    .battle-description {
-        width: 100%;
+@media (max-width: 400px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .title-description {
+        font-size: .6rem;
+    }
+
+    .inst {
+        font-size: 1rem;
+    }
+
+    .weapons {
+        height: 18%;
     }
 
     .chosen-weapons-container {
-        width: 80%;
+        height: 10%;
+        min-width: 100%;
     }
+
+    .chosen-weapons-container p {
+        font-size: .7rem;
+    }
+
+    .battle-description {
+        font-size: 1rem;
+        height: 20%;
+    }
+
+    .battle-end-description {
+        margin-top: 1rem;
+        height: 25%;
+        width: 100%;
+    }
+
+    .scores {
+        margin: 0;
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    .player-win,
+    .enemy-win {
+        width: 70%;
+    }
+
+    .weapons,
+    .battle-description,
+    .chosen-weapons-container {
+        width: 100%;
+    }
+
+    .scores,
+    .battle-end-description,
+    .end-game-description {
+        font-size: 1rem;
+    }
+
+
 }
 
 
