@@ -31,6 +31,10 @@ function getComputerChoice(n) {
 
 // place computer weapon in game
 function placeWeapon(weapon, player, container) {
+    if (pWins == 5 || cWins === 5) {
+        return;
+    }
+
     if (weapon == sword) {
         player.src  = 'images/sword.png'
         player.className = 'images'
@@ -79,9 +83,9 @@ btnLance.addEventListener('click' , () => {
     playerChoice = lance;
     computerChoice = getComputerChoice(3);
     // place choices in game
-    game();
     placeWeapon(playerChoice, playerImage, pWeapon);
     placeWeapon(computerChoice, enemyImage, cWeapon);
+    game();
 });
 
 // function for starting the game
@@ -95,22 +99,22 @@ function startRound(playerChoice, computerChoice){
         battleEndDesc.textContent = battleDraw;
     } else if (playerChoice === sword & computerChoice === axe) {
         battleEndDesc.textContent  = `${swordWin}. You win this round.`
-        pWins += 1;
+        pWins++;
     } else if (playerChoice === lance & computerChoice === sword) {
         battleEndDesc.textContent  = `${lanceWin}. You win this round.`
-        pWins += 1;
+        pWins++;
     } else if (playerChoice === axe & computerChoice === lance) {
         battleEndDesc.textContent  = `${axeWin}. You win this round.`
-        pWins += 1;
+        pWins++;
     } else if (computerChoice === sword & playerChoice === axe) {
         battleEndDesc.textContent  = `${swordWin}. You lost this round.`
-        cWins += 1;
+        cWins++;
     } else if (computerChoice === lance & playerChoice === sword) {
         battleEndDesc.textContent  = `${lanceWin}. You lost this round.`
-        cWins += 1;
+        cWins++;
     } else if (computerChoice === axe & playerChoice === lance) {
         battleEndDesc.textContent  = `${axeWin}. You lost this round.`
-        cWins += 1;
+        cWins++;
     } 
         playerScore.textContent = `Your Wins: ${pWins}`;
         computerScore.textContent = `Enemy Wins: ${cWins}`;

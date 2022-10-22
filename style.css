@@ -211,11 +211,22 @@ body {
 @media (min-width: 800px) {
    .weapons,
    .battle-description {
-      width: 45%;
+      width: 55%;
    }
 
    .chosen-weapons-container {
+      width: 50%;
+   }
+}
+
+@media (min-width: 1500px) {
+   .weapons,
+   .battle-description {
       width: 40%;
+   }
+
+   .chosen-weapons-container {
+      width: 35%;
    }
 }
 
@@ -234,6 +245,7 @@ body {
 
    .weapons {
         height: 18%;
+        width: 60%;
    }
 
    .chosen-weapons-container {
